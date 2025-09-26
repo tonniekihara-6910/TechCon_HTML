@@ -392,6 +392,368 @@
             margin-bottom: 15px;
         }
 
+        /* Schedule Section */
+        .schedule {
+            background: var(--darker);
+        }
+
+        .schedule-tabs {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tab-buttons {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tab-btn {
+            padding: 15px 30px;
+            background: transparent;
+            border: none;
+            color: var(--gray);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+        }
+
+        .tab-btn.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .schedule-item {
+            display: flex;
+            background: var(--dark);
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .schedule-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow);
+        }
+
+        .time {
+            background: var(--primary);
+            padding: 20px;
+            min-width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .event {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .event h3 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* Sponsors Section */
+        .sponsors {
+            background: var(--dark);
+            text-align: center;
+        }
+
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            align-items: center;
+        }
+
+        .sponsor-logo {
+            height: 100px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .sponsor-logo:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        /* Venue Section */
+        .venue {
+            background: var(--darker);
+        }
+
+        .venue-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .venue-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .venue-details {
+            margin-bottom: 30px;
+        }
+
+        .venue-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .venue-detail i {
+            width: 30px;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .venue-map {
+            height: 400px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: var(--dark);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: var(--darker);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 20px 0;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        .pricing-features {
+            margin: 30px 0;
+        }
+
+        .pricing-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pricing-features i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--darker);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--dark);
+            padding: 30px;
+            border-radius: var(--radius);
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-text {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-role {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--dark);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: var(--darker);
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
         /* CTA Section */
         .cta {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
@@ -501,6 +863,19 @@
             .section-header h2 {
                 font-size: 2.2rem;
             }
+            
+            .venue-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
         }
 
         @media (max-width: 768px) {
@@ -541,6 +916,19 @@
                 flex-direction: column;
                 gap: 20px;
             }
+            
+            .tab-buttons {
+                flex-direction: column;
+            }
+            
+            .schedule-item {
+                flex-direction: column;
+            }
+            
+            .time {
+                min-width: 100%;
+                padding: 15px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -572,6 +960,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#schedule">Schedule</a></li>
                         <li><a href="#speakers">Speakers</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
                         <li><a href="#register" class="btn btn-secondary">Register Now</a></li>
                     </ul>
                 </nav>
@@ -794,143 +1183,60 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta" id="register">
+        <!-- Sponsors Section -->
+        <section class="sponsors">
             <div class="container">
-                <h2>Don't Miss Out on TechCon 2024</h2>
-                <p>Secure your spot today and be part of the technology revolution. Early bird registration ends soon!</p>
-                <a href="#" class="btn">Register Now</a>
+                <div class="section-header">
+                    <h2>Our Sponsors</h2>
+                    <p>Thank you to our amazing sponsors who make TechCon 2024 possible.</p>
+                </div>
+                <div class="sponsors-grid">
+                    <div class="sponsor-logo">TechGiant</div>
+                    <div class="sponsor-logo">InnoSoft</div>
+                    <div class="sponsor-logo">FutureLabs</div>
+                    <div class="sponsor-logo">DataSystems</div>
+                    <div class="sponsor-logo">CloudNet</div>
+                    <div class="sponsor-logo">CodeMasters</div>
+                </div>
             </div>
         </section>
-    </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>TechCon 2024</h3>
-                    <p>The premier technology conference bringing together innovators, developers, and industry leaders from around the world.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+        <!-- Venue Section -->
+        <section class="venue">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Conference Venue</h2>
+                    <p>Experience TechCon 2024 at the state-of-the-art San Francisco Convention Center.</p>
+                </div>
+                <div class="venue-content">
+                    <div class="venue-info">
+                        <h3>San Francisco Convention Center</h3>
+                        <p>Located in the heart of downtown San Francisco, our venue offers cutting-edge facilities and breathtaking views of the city skyline.</p>
+                        <div class="venue-details">
+                            <div class="venue-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>747 Howard St, San Francisco, CA 94103</span>
+                            </div>
+                            <div class="venue-detail">
+                                <i class="fas fa-phone"></i>
+                                <span>+1 (415) 974-4000</span>
+                            </div>
+                            <div class="venue-detail">
+                                <i class="fas fa-clock"></i>
+                                <span>October 15-17, 2024 | 9:00 AM - 6:00 PM Daily</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn">Get Directions</a>
+                    </div>
+                    <div class="venue-map">
+                        <i class="fas fa-map-marked-alt"></i> Interactive Map
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#schedule">Schedule</a></li>
-                        <li><a href="#speakers">Speakers</a></li>
-                        <li><a href="#register">Register</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
-                        <li><i class="fas fa-envelope"></i> info@techcon2024.com</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                    </ul>
-                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; Copyright 2024 TechCon Conference. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </section>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-
-        // Header Scroll Effect
-        const header = document.getElementById('header');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Video Play Functionality
-        const promoVideo = document.getElementById('promoVideo');
-        const videoOverlay = document.getElementById('videoOverlay');
-        const playBtn = document.getElementById('playBtn');
-        
-        playBtn.addEventListener('click', () => {
-            promoVideo.play();
-            videoOverlay.classList.add('hidden');
-        });
-        
-        promoVideo.addEventListener('click', () => {
-            if (promoVideo.paused) {
-                promoVideo.play();
-                videoOverlay.classList.add('hidden');
-            } else {
-                promoVideo.pause();
-                videoOverlay.classList.remove('hidden');
-            }
-        });
-        
-        promoVideo.addEventListener('ended', () => {
-            videoOverlay.classList.remove('hidden');
-        });
-
-        // Schedule Tabs
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabPanes = document.querySelectorAll('.tab-pane');
-        
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons and panes
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabPanes.forEach(p => p.classList.remove('active'));
-                
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Show corresponding pane
-                const day = btn.getAttribute('data-day');
-                document.getElementById(day).classList.add('active');
-            });
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (mainNav.classList.contains('active')) {
-                        mainNav.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+        <!-- Pricing Section -->
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Ticket Pricing</
