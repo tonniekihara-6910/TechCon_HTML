@@ -3,51 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule - TechCon 2024</title>
+    <title>Register for TechCon 2024</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Navigation Styles */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #1a2a6c;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #fdbb2d;
+        }
+        
+        /* Main Content Styles */
+        main {
+            padding: 3rem 0;
+        }
+        
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1a2a6c;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #1a2a6c;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(26, 42, 108, 0.2);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 1.5rem;
+        }
+        
+        .checkbox-group input {
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        
+        .checkbox-group label {
+            font-weight: normal;
+            line-height: 1.4;
+        }
+        
+        .terms-link {
+            color: #1a2a6c;
+            text-decoration: none;
+        }
+        
+        .terms-link:hover {
+            text-decoration: underline;
+        }
+        
+        button[type="submit"] {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 1rem;
+        }
+        
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #1a2a6c;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .form-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Schedule for TechCon 2024</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="register.html">Register</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <div class="container">
+            <h1>Register for TechCon 2024</h1>
+            <p>Join the premier technology conference of the year</p>
+        </div>
     </header>
     
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <main>
-        <table>
-            <caption>Detailed Schedule of Events for TechCon 2024</caption>
-            <thead>
-                <tr>
-                    <th scope="col">Time</th>
-                    <th scope="col">Session</th>
-                    <th scope="col">Speaker</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>9:00 AM - 10:00 AM</td>
-                    <td>Keynote: Future of Technology</td>
-                    <td>Dr. Sarah Johnson</td>
-                </tr>
-                <tr>
-                    <td>10:00 AM - 11:00 AM</td>
-                    <td>AI and Machine Learning</td>
-                    <td>Prof. Michael Chen</td>
-                </tr>
-                <tr>
-                    <td>11:00 AM - 12:00 PM</td>
-                    <td>Cloud Computing</td>
-                    <td>Lisa Rodriguez</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="container">
+            <div class="form-container">
+                <h2 class="form-title">TechCon 2024 Registration Form</h2>
+                <form id="registration-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Create a password">
+                        <small>Password must be at least 8 characters long</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required placeholder="Re-enter your password">
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#" class="terms-link">Terms and Conditions</a> and Privacy Policy of TechCon 2024</label>
+                    </div>
+                    
+                    <button type="submit">Register Now</button>
+                </form>
+            </div>
+        </div>
     </main>
     
     <footer>
-        <p>copyright 2024 TechCon Conference. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 TechCon Conference. All rights reserved.</p>
+            <p>Designed with ❤️ for the tech community</p>
+        </div>
     </footer>
+
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const terms = document.getElementById('terms').checked;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match. Please try again.');
+                return;
+            }
+            
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long.');
+                return;
+            }
+            
+            if (!terms) {
+                alert('You must agree to the Terms and Conditions to register.');
+                return;
+            }
+            
+            // In a real application, you would submit the form data to a server here
+            alert('Registration successful! Welcome to TechCon 2024.');
+            // Reset the form after successful submission
+            this.reset();
+        });
+    </script>
 </body>
 </html>
