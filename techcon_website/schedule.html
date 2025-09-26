@@ -72,6 +72,7 @@
         /* Main Content Styles */
         main {
             padding: 3rem 0;
+            min-height: 70vh;
         }
         
         .form-container {
@@ -196,6 +197,23 @@
                 padding: 1.5rem;
             }
         }
+        
+        .error-message {
+            color: #b21f1f;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -220,34 +238,43 @@
     
     <main>
         <div class="container">
+            <div class="success-message" id="successMessage">
+                Registration successful! Welcome to TechCon 2024.
+            </div>
+            
             <div class="form-container">
                 <h2 class="form-title">TechCon 2024 Registration Form</h2>
                 <form id="registration-form">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        <div class="error-message" id="nameError">Please enter your full name</div>
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                        <div class="error-message" id="emailError">Please enter a valid email address</div>
                     </div>
                     
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" required placeholder="Create a password">
                         <small>Password must be at least 8 characters long</small>
+                        <div class="error-message" id="passwordError">Password must be at least 8 characters</div>
                     </div>
                     
                     <div class="form-group">
                         <label for="confirm-password">Confirm Password</label>
                         <input type="password" id="confirm-password" name="confirm-password" required placeholder="Re-enter your password">
+                        <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
                     </div>
                     
                     <div class="checkbox-group">
                         <input type="checkbox" id="terms" name="terms" required>
                         <label for="terms">I agree to the <a href="#" class="terms-link">Terms and Conditions</a> and Privacy Policy of TechCon 2024</label>
                     </div>
+                    <div class="error-message" id="termsError">You must agree to the terms and conditions</div>
                     
                     <button type="submit">Register Now</button>
                 </form>
@@ -266,29 +293,60 @@
         document.getElementById('registration-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
+            // Reset error messages
+            document.querySelectorAll('.error-message').forEach(msg => {
+                msg.style.display = 'none';
+            });
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm-password').value;
             const terms = document.getElementById('terms').checked;
             
-            if (password !== confirmPassword) {
-                alert('Passwords do not match. Please try again.');
-                return;
+            let isValid = true;
+            
+            // Validate name
+            if (name.trim() === '') {
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
             }
             
+            // Validate email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate password
             if (password.length < 8) {
-                alert('Password must be at least 8 characters long.');
-                return;
+                document.getElementById('passwordError').style.display = 'block';
+                isValid = false;
             }
             
+            // Validate password confirmation
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate terms
             if (!terms) {
-                alert('You must agree to the Terms and Conditions to register.');
-                return;
+                document.getElementById('termsError').style.display = 'block';
+                isValid = false;
             }
             
-            // In a real application, you would submit the form data to a server here
-            alert('Registration successful! Welcome to TechCon 2024.');
-            // Reset the form after successful submission
-            this.reset();
+            if (isValid) {
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Reset the form after successful submission
+                setTimeout(() => {
+                    this.reset();
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 3000);
+            }
         });
     </script>
 </body>
