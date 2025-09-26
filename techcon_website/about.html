@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About TechCon 2024</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles & Variables */
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --secondary: #ff3366;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(10, 10, 20, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 160px 0 100px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(0,102,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #ccc;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Article Styles */
+        article {
+            margin-bottom: 80px;
+            background: var(--dark);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .article-header {
+            padding: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .article-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .article-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .article-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .article-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .article-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Speakers Grid */
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .speaker-card {
+            background: var(--darker);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: rgba(0, 102, 255, 0.3);
+        }
+
+        .speaker-img {
+            height: 250px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .speaker-info {
+            padding: 25px;
+        }
+
+        .speaker-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .speaker-role {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker);
+            padding: 70px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .article-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                padding: 20px;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                pointer-events: none;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .page-header {
+                padding: 140px 0 80px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .article-header, .article-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">TechCon <span>2024</span></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About TechCon 2024</h1>
+            <p>Discover the story behind the world's premier technology conference and our mission to drive innovation forward.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- History Article -->
+        <section class="container">
+            <article>
+                <div class="article-header">
+                    <h2>Our History</h2>
+                    <p>From humble beginnings to global impact</p>
+                </div>
+                <div class="article-content">
+                    <div class="article-text">
+                        <p>TechCon was founded in 2010 by a group of visionary technologists who believed in the power of collaboration to drive innovation. What started as a small gathering of 200 enthusiasts in a San Francisco warehouse has grown into one of the world's most influential technology conferences.</p>
+                        <p>Over the past 14 years, TechCon has hosted over 50,000 attendees, featured more than 500 industry-leading speakers, and facilitated countless partnerships that have shaped the technological landscape.</p>
+                        <p>Our journey reflects the rapid evolution of technology itself—from the early days of cloud computing and mobile revolution to today's advancements in AI, quantum computing, and sustainable technology.</p>
+                    </div>
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Historical photo of the first TechCon conference in 2010">
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Mission Article -->
+        <section class="container">
+            <article>
+                <div class="article-header">
+                    <h2>Our Mission</h2>
+                    <p>Driving technological progress through collaboration</p>
+                </div>
+                <div class="article-content">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Diverse group of technology professionals collaborating">
+                    </div>
+                    <div class="article-text">
+                        <p>At TechCon, our mission is to create a platform where innovators, thought leaders, and technology enthusiasts can connect, share knowledge, and inspire the next wave of technological breakthroughs.</p>
+                        <p>We believe that technology should be accessible, ethical, and beneficial to all of humanity. Our conferences are designed to:</p>
+                        <ul style="margin: 20px 0; padding-left: 20px;">
+                            <li style="margin-bottom: 10px; list-style-type: disc;">Foster cross-disciplinary collaboration</li>
+                            <li style="margin-bottom: 10px; list-style-type: disc;">Showcase cutting-edge innovations</li>
+                            <li style="margin-bottom: 10px; list-style-type: disc;">Address the ethical implications of new technologies</li>
+                            <li style="margin-bottom: 10px; list-style-type: disc;">Promote diversity and inclusion in tech</li>
+                            <li style="list-style-type: disc;">Inspire the next generation of technologists</li>
+                        </ul>
+                        <p>Through our events, we aim to not only showcase what's possible today but also to envision and work toward a better technological future.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Past Speakers Article -->
+        <section class="container">
+            <article>
+                <div class="article-header">
+                    <h2>Notable Past Speakers</h2>
+                    <p>Industry leaders who have shaped TechCon's legacy</p>
+                </div>
+                <div class="article-content">
+                    <div class="article-text">
+                        <p>Over the years, TechCon has been privileged to host some of the most influential voices in technology. These visionaries have shared their insights, challenged conventional thinking, and inspired thousands of attendees.</p>
+                        <p>Our speaker alumni include Nobel laureates, Turing Award winners, founders of billion-dollar companies, and researchers pushing the boundaries of what's possible with technology.</p>
+                        <p>Below are just a few of the notable speakers who have graced our stages in previous years.</p>
+                    </div>
+                </div>
+                
+                <div class="speakers-grid">
+                    <div class="speaker-card">
+                        <div class="speaker-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="speaker-info">
+                            <h3>Dr. Elena Rodriguez</h3>
+                            <p class="speaker-role">AI Research Director, NeuroTech Labs</p>
+                            <p>Pioneer in neural network applications for medical diagnostics. Her 2021 keynote on ethical AI influenced industry standards worldwide.</p>
+                        </div>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="speaker-info">
+                            <h3>Marcus Chen</h3>
+                            <p class="speaker-role">CTO, QuantumLeap Computing</p>
+                            <p>Led the development of the first commercially viable quantum processor. His 2019 presentation demystified quantum computing for thousands.</p>
+                        </div>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="speaker-info">
+                            <h3>Dr. Amina Jallow</h3>
+                            <p class="speaker-role">Founder, GreenTech Solutions</p>
+                            <p>Revolutionized sustainable technology with her work on carbon-capture systems. Her 2022 talk inspired a wave of eco-tech startups.</p>
+                        </div>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="speaker-info">
+                            <h3>James O'Connell</h3>
+                            <p class="speaker-role">Cybersecurity Expert, former White House Advisor</p>
+                            <p>His 2020 presentation on global cybersecurity threats led to new international cooperation frameworks in digital defense.</p>
+                        </div>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="speaker-info">
+                            <h3>Sophie Williams</h3>
+                            <p class="speaker-role">VR/AR Pioneer, Immersive Tech Labs</p>
+                            <p>Transformed digital interaction with her groundbreaking work in mixed reality. Her 2018 demo set new standards for immersive experiences.</p>
+                        </div>
+                    </div>
+                    <div class="speaker-card">
+                        <div class="speaker-img">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="speaker-info">
+                            <h3>Dr. Kenji Tanaka</h3>
+                            <p class="speaker-role">Robotics Innovator, Future Automation Inc.</p>
+                            <p>His work on human-robot collaboration has redefined manufacturing and service industries. The 2023 robotics showcase was a conference highlight.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TechCon 2024</h3>
+                    <p>The premier technology conference bringing together innovators, developers, and industry leaders from around the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
+                        <li><i class="fas fa-envelope"></i> info@techcon2024.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; Copyright 2024 TechCon Conference. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
